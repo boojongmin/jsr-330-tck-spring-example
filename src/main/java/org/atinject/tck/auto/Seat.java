@@ -32,7 +32,7 @@ public class Seat {
     private final Cupholder cupholder;
 
     @Inject
-    Seat(Cupholder cupholder) {
+    public Seat(Cupholder cupholder) {
         this.cupholder = cupholder;
     }
 
