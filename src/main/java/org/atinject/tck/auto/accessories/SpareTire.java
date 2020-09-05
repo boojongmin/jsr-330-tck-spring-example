@@ -18,9 +18,16 @@ package org.atinject.tck.auto.accessories;
 
 import org.atinject.tck.auto.FuelTank;
 import org.atinject.tck.auto.Tire;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+@Named("spare")
 public class SpareTire extends Tire {
 
     FuelTank constructorInjection = NEVER_INJECTED;

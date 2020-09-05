@@ -17,10 +17,12 @@
 package org.atinject.tck.auto;
 
 import org.atinject.tck.auto.accessories.SpareTire;
+import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
+@Component
 public class V8Engine extends GasEngine {
 
     public V8Engine() {

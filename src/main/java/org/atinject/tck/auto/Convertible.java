@@ -20,11 +20,13 @@ import junit.framework.TestCase;
 import org.atinject.tck.auto.accessories.Cupholder;
 import org.atinject.tck.auto.accessories.SpareTire;
 import org.atinject.tck.auto.accessories.RoundThing;
+import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Provider;
 
+@Component
 public class Convertible implements Car {
 
     @Inject @Drivers Seat driversSeatA;

@@ -17,11 +17,14 @@
 package org.atinject.tck.auto.accessories;
 
 import org.atinject.tck.auto.Seat;
+import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
+import javax.inject.Scope;
 import javax.inject.Singleton;
 
+@Component
 @Singleton
 public class Cupholder {
 

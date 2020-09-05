@@ -17,10 +17,15 @@
 package org.atinject.tck.auto;
 
 import org.atinject.tck.auto.accessories.Cupholder;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+@Primary
+@Component
 @Singleton
 public class Seat {
 

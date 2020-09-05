@@ -17,9 +17,16 @@
 package org.atinject.tck.auto;
 
 import org.atinject.tck.auto.accessories.Cupholder;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
 
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+@Drivers
 public class DriversSeat extends Seat {
 
     @Inject

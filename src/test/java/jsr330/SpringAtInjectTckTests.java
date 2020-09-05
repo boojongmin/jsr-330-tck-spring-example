@@ -14,6 +14,7 @@ import org.atinject.tck.auto.accessories.Cupholder;
 import org.atinject.tck.auto.accessories.SpareTire;
 
 import org.springframework.context.annotation.AnnotatedBeanDefinitionReader;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Jsr330ScopeMetadataResolver;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.support.GenericApplicationContext;
@@ -31,18 +32,11 @@ public class SpringAtInjectTckTests {
 //    </dependency>
     @SuppressWarnings("unchecked")
     public static Test suite() {
-        GenericApplicationContext ac = new GenericApplicationContext();
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext();
         AnnotatedBeanDefinitionReader bdr = new AnnotatedBeanDefinitionReader(ac);
         bdr.setScopeMetadataResolver(new Jsr330ScopeMetadataResolver());
 
-        bdr.registerBean(Convertible.class);
-        bdr.registerBean(DriversSeat.class, Drivers.class);
-        bdr.registerBean(Seat.class, Primary.class);
-        bdr.registerBean(V8Engine.class);
-        bdr.registerBean(SpareTire.class, "spare");
-        bdr.registerBean(Cupholder.class);
-        bdr.registerBean(Tire.class, Primary.class);
-        bdr.registerBean(FuelTank.class);
+        ac.scan("org.atinject.tck.auto");
 
         ac.refresh();
         Car car = ac.getBean(Car.class);

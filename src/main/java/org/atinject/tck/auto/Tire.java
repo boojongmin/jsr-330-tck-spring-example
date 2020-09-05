@@ -18,11 +18,18 @@ package org.atinject.tck.auto;
 
 import org.atinject.tck.auto.accessories.SpareTire;
 import org.atinject.tck.auto.accessories.RoundThing;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@Primary
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+@Component
 public class Tire extends RoundThing {
 
     protected static final FuelTank NEVER_INJECTED = new FuelTank();
